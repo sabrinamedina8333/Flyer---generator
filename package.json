@@ -1,0 +1,10 @@
+{
+  "name": "flyer-generator",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Static site'"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
