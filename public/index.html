@@ -381,17 +381,17 @@ function buildFlyerHTML(p, fmt, imgSrc, forExport=false, scale=1) {
       </div>
       <div class="f-price-row">
         <div class="f-price" style="background:${cat.priceBg};box-shadow:0 6px 24px rgba(0,0,0,.5)">
-          <div class="f-price-num">$${fmt2(p.precio)}</div>
+          <div class="f-price-num">$${fmt(p.precio)}</div>
           <div class="f-price-lbl">CONTADO EFECTIVO</div>
         </div>
       </div>
       <div class="f-fin" style="background:${cat.finBg}">
         <div class="f-fin-title"><em>FINANCIACIÓN</em> SOLO CON DNI + IMP</div>
         <div class="f-fin-grid">
-          <div class="f-fin-item">ENTREGA $${fmt2(p.entrega)}</div>
-          <div class="f-fin-item">${p.semanas} SEMANAS $${fmt2(p.mSem)}</div>
-          <div class="f-fin-item">${p.quinc} QUINCENAS $${fmt2(p.mQuin)}</div>
-          <div class="f-fin-item">${p.meses} MESES $${fmt2(p.mMes)}</div>
+          <div class="f-fin-item">ENTREGA $${fmt(p.entrega)}</div>
+          <div class="f-fin-item">${p.semanas} SEMANAS $${fmt(p.mSem)}</div>
+          <div class="f-fin-item">${p.quinc} QUINCENAS $${fmt(p.mQuin)}</div>
+          <div class="f-fin-item">${p.meses} MESES $${fmt(p.mMes)}</div>
         </div>
       </div>
     </div>
@@ -476,17 +476,17 @@ async function captureFlyer(p,fmt,imgSrc){
       </div>
       <div class="f-price-row">
         <div class="f-price">
-          <div class="f-price-num">$${fmt2(p.precio)}</div>
+          <div class="f-price-num">$${fmt(p.precio)}</div>
           <div class="f-price-lbl">CONTADO EFECTIVO</div>
         </div>
       </div>
       <div class="f-fin">
         <div class="f-fin-title"><em>FINANCIACIÓN</em> SOLO CON DNI + IMP</div>
         <div class="f-fin-grid">
-          <div class="f-fin-item">ENTREGA $${fmt2(p.entrega)}</div>
-          <div class="f-fin-item">${p.semanas} SEMANAS $${fmt2(p.mSem)}</div>
-          <div class="f-fin-item">${p.quinc} QUINCENAS $${fmt2(p.mQuin)}</div>
-          <div class="f-fin-item">${p.meses} MESES $${fmt2(p.mMes)}</div>
+          <div class="f-fin-item">ENTREGA $${fmt(p.entrega)}</div>
+          <div class="f-fin-item">${p.semanas} SEMANAS $${fmt(p.mSem)}</div>
+          <div class="f-fin-item">${p.quinc} QUINCENAS $${fmt(p.mQuin)}</div>
+          <div class="f-fin-item">${p.meses} MESES $${fmt(p.mMes)}</div>
         </div>
       </div>
     </div>
@@ -520,7 +520,7 @@ async function downloadAll(mode){
 }
 
 // ── HELPERS ──────────────────────────────────────────────
-function fmt2(n){return Number(n).toLocaleString('es-AR');}
+function fmt(n){return Number(n).toLocaleString('es-AR');}
 function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
 function dl(dataURL,name){const a=document.createElement('a');a.href=dataURL;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);}
